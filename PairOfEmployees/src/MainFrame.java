@@ -16,14 +16,15 @@ public class MainFrame extends Component {
 
     public JButton btnBrowse;
     private JFileChooser chooser;
-    private JScrollPane scrollPane;
     private JTextArea textArea;
 
 
     public MainFrame() {
         init();
     }
-
+    public void show() {
+        this.frame.setVisible(true);
+    }
     private void init() {
 
         frame = new JFrame();
@@ -42,14 +43,9 @@ public class MainFrame extends Component {
         frame.add(panel, BorderLayout.CENTER);
     }
 
-    public void show() {
-        this.frame.setVisible(true);
-    }
-
     private JButton createButton() {
         JButton button = new JButton("Browse...");
         button.setFocusable(false);
-
 
         button.addActionListener(new ActionListener() {
             @Override
@@ -77,7 +73,6 @@ public class MainFrame extends Component {
     private JTextArea createTextArea() {
         JTextArea textArea = new JTextArea(10, 20);
         textArea.setEditable(false);
-
         return textArea;
     }
 }

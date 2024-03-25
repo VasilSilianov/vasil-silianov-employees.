@@ -16,7 +16,7 @@ public class EmployeeOperations {
         return findEmployeePairWorkedTogether(employeesWorkInfoList);
     }
 
-    public static List<WorkedTogether> findEmployeePairWorkedTogether(List<EmployeesWorkInfo> employeesWorkInfoList) {
+    private static List<WorkedTogether> findEmployeePairWorkedTogether(List<EmployeesWorkInfo> employeesWorkInfoList) {
         Map<Integer, List<EmployeesWorkInfo>> groupByProjectId = Utils.groupByProjectId(employeesWorkInfoList);
         List<WorkedTogether> biggestDaysWorkedTogetherForEachProject = new ArrayList<>();
         for (Map.Entry<Integer, List<EmployeesWorkInfo>> entry : groupByProjectId.entrySet()) {
